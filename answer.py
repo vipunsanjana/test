@@ -58,9 +58,12 @@ def compute_convex_hull(points):
     return lower[:-1] + upper[:-1]
 
 def solve():
-    # Read all lines from standard input
-    input_data = sys.stdin.read().split()
+
+    with open("input.txt", "r") as f:
+        input_data = f.read().split()
+    
     if not input_data:
+        logger.error("No input data found.")
         return
         
     N = int(input_data[0])
